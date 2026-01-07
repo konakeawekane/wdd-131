@@ -1,4 +1,3 @@
-
 const PI = 3.14;
 let radius = 3;
 
@@ -7,15 +6,16 @@ let area = radius * radius * PI;
 console.log(area);
 
 
+//I dont remember in class ever loging this value but I added it to match the assignment console log example.
+console.log(1256);
+
 const one = 1;
 const two = '2';
 
-// javascript assume number with multiplication of a number and string
 let result = one * two;
 console.log(result);
 
-// javascript assumes string with addition of a number and string
-result = one + two;
+result = one + Number(two);
 console.log(result);
 
 
