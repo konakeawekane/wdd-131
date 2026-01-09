@@ -1,0 +1,41 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#content{
+    max-width: 430px;
+    margin: 50px auto;
+}
+
+h1, h2{
+    font-weight: normal;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.3em;
+}
+
+h2 {
+    font-size: 1em;
+    color: #2883C1;
+}
+
+img{
+    max-width: 140px;
+    display: block;
+    margin: 0 auto;
+}
+
+hr{
+    margin: -10px 0 38px 0;
+}
+
+p, i, li{
+    line-height: 25px;
+    font-size: 0.9em;
+}
+
+li{
+    margin: 10px 0 15px 0;
+}
