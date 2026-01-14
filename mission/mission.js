@@ -14,16 +14,14 @@ selectElem.addEventListener('change', changeTheme);
 function changeTheme() {
     let current = selectElem.value;
     if (current == 'dark') {
-        page.style.backgroundColor = '#000';
-        content.style.border = '1px solid white';
-        page.style.color = '#fff';
-        logo.src = darkModeImage;
+        page.classList.add('dark');
         flavorText.style.color = '#9fd2f4';
+        content.style.border = '1px solid white';
+        logo.src = darkModeImage;
     } else {
-        page.style.backgroundColor = '#fff';
-        content.style.border = '1px solid black';
-        page.style.color = '#000';
-        logo.src = lightModeImage;
+        page.classList.remove('dark');
         flavorText.style.color = '#2883C1';
+        content.style.border = '1px solid black';
+        logo.src = lightModeImage;
     }
 }

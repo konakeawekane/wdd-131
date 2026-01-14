@@ -2,6 +2,11 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
+.dark{
+    background-color: #333;
+    color: white;
+}
+
 #content{
     max-width: 500px;
     min-width: 400px;
