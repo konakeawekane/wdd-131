@@ -3,8 +3,11 @@ body{
 }
 
 #content{
-    max-width: 430px;
+    max-width: 500px;
+    min-width: 400px;
     margin: 50px auto;
+    border: 1px solid black;
+    padding: 20px 50px;
 }
 
 h1, h2{
