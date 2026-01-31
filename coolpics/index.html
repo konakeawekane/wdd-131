@@ -7,12 +7,13 @@
     <title>Picture Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
+    <script src="model.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cool Pics📷</h1>
-        <h3 class="menu">Menu</h3>
-        <nav>
+        <h3 class="menu-btn">Menu</h3>
+        <nav class="hide">
             <a href="#">Home</a>
             <a href="#">People</a>
             <a href="#">Places</a>
@@ -37,5 +38,9 @@
     <footer>
         &copy;2025 Not a real site 😊
     </footer>
+    <dialog>
+        <img class="modal-img">
+        <button class="close-btn">X</button>
+    </dialog>
 </body>
 </html>
