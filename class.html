@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prep for the week</title>
+    <style>
+        .format, h1 {
+            text-align:center;
+            font: 2em;
+        }
+        hr {
+            width: 300px;
+        }
+        .details{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>WDD 131 Student List</h1>
+    <div id="student_container"></div>
+    <script>
+        const student = [
+            {
+                last: 'Scott',
+                first: 'Esther'
+            },
+            {
+                last: 'Kouakou',
+                first: 'Christ'
+            },
+            {
+                last: 'Joshua',
+                first: 'Young'
+            }
+        ]
+
+        let container = document.querySelector("#student_container");
+        
+        student.forEach(function(item){
+            let name = document.createElement('div')
+            name.setAttribute('class', 'format');
+
+            let html = `
+                <p class='details'>${item.first}</p>
+                <p class='details'>${item.last}</p>
+            <hr>`;
+
+            name.innerHTML = html;
+
+            container.appendChild(name);
+        });
+
+    </script>
+</body>
+</html>
