@@ -85,5 +85,5 @@ function submitHandler(event) {
     formContainer.innerHTML = '<h2>Thank you for your purchase.</h2>';
 }
   
-document.querySelector('#checkoutForm').addEventListener('submit', submitHandler)
+theForm.addEventListener('submit', submitHandler)
           
