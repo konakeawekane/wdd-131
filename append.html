@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        const students = [
+            {title:"bob", year:"19"},
+            {title:"mike", year:"18"},
+            {title:"jerry", year:"20"}
+        ]
+
+        const container = document.getElementById("list");
+
+        students.forEach(item =>{
+            container.appendChild(document.`<li>${item.title} ${item.year}`);
+        });
+    </script>
+</body>
+</html>
