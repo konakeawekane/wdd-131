@@ -29,6 +29,8 @@ let character = {
         className.textContent = this.class;
         level.textContent = this.level;
         health.textContent = this.health;
+        image.setAttribute("img", this.imgPath);
+        image.setAttribute("alt", this.imgAlt);
     }
 }
 
