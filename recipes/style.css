@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+
+body{
+    margin: 0px;
+    font-family: "Amatic SC", sans-serif, Arial;
+}
+
+#title{
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+    justify-self: center;
+}
+
+#icon{
+    max-width: 5em;
+    margin: 16px 0px 16px 0px;
+}
+
+#title h1{
+    font-size: 3.5em;
+    margin: 16px 0px 10px 0px;
+}
+
+#search-form{
+    border: 2px solid black;
+    border-radius: 5px;
+    max-width: 30em;
+    min-height: 1.4em;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr 2.0em;
+    align-content: center;
+}
+
+#search{
+    grid-area: 1/1/2/2;
+    background-color: rgba(0.0, 0.0, 0.0, 0.0);
+    border: none;
+    overflow: hidden;
+}
+
+#sumbit{
+    grid-area: 1/2/2/3;
+    background-color: rgba(0.0, 0.0, 0.0, 0.0);
+    background-image: url(images/search.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    border-left: 1px solid black;
+}
+
+#search:focus{
+    outline: none;
+}
