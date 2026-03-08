@@ -3,7 +3,14 @@
 
 body{
     margin: 0px;
-    font-family: "Amatic SC", sans-serif, Arial;
+    font-family: sans-serif, Arial;
+}
+
+#page{
+    width: 80%;
+    max-width: 440px;
+    min-width: 330px;
+    justify-self: center;
 }
 
 #title{
@@ -11,6 +18,7 @@ body{
     gap: 5px;
     align-items: flex-end;
     justify-self: center;
+    font-family: "Amatic SC", sans-serif, Arial;
 }
 
 #icon{
@@ -26,12 +34,11 @@ body{
 #search-form{
     border: 2px solid black;
     border-radius: 5px;
-    max-width: 30em;
-    min-height: 1.4em;
     justify-self: center;
     display: grid;
     grid-template-columns: 1fr 2.0em;
     align-content: center;
+    width: 100%;
 }
 
 #search{
@@ -39,6 +46,11 @@ body{
     background-color: rgba(0.0, 0.0, 0.0, 0.0);
     border: none;
     overflow: hidden;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    border-right: 1px solid black;
 }
 
 #sumbit{
@@ -50,9 +62,97 @@ body{
     background-repeat: no-repeat;
     border: none;
     overflow: hidden;
-    border-left: 1px solid black;
+    margin: 5px;
 }
 
 #search:focus{
     outline: none;
+}
+
+main{
+    width: 100%;
+}
+
+.Recipe-card{
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.Recipe-card img{
+    box-sizing: border-box;
+    width: 100%;
+    object-fit: cover;
+    justify-self: center;
+    padding: 10px;
+    padding-bottom: 4px;
+}
+
+.tag{
+    background-color: #EFEFEF;
+    width:fit-content;
+    border: 2px solid #cfcfcf;
+    border-radius: 5px;
+    padding: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.details{
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.details h2{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: #2396E0;
+    font-family: "Amatic SC", sans-serif, Arial;
+}
+
+.social{
+    justify-self: center;
+    width: 6em;
+    margin-top: 15px;
+}
+
+.social img{
+    max-width: 1.5em;
+}
+
+.credit{
+    display:block;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-self: center;
+}
+
+.description {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    #page{
+        min-width: 800px;
+    }
+
+    .Recipe-card{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .description{
+        display: block;
+        font-size: 14px;
+    }
+
+    .tag{
+        margin-top: 10px;
+    }
+
+    .Recipe-card img{
+        padding-bottom: 10px;
+    }
 }
