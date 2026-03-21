@@ -45,10 +45,13 @@ let pen = {
     dir: 0
 }
 
-setInterval(drawImage, 33);
+// setInterval(drawImage, 33);
+
+drawImage();
 
 function drawImage(){
     instructions.forEach(inst => {
+    console.log(inst);
     run(inst);
     });
 }
