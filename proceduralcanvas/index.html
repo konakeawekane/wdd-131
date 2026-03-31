@@ -3,10 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procedual Drawer Experiment</title>
+    <title>Procedual Canvas</title>
     <script src="drawer.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <canvas id="displayCanvas" width="400" height="400"></canvas>
+    <div id="page">
+        <header>
+            <h1 class="title">Procedual Canvas <img id="logo" src="images/logo.png" alt="Logo of a paint brush in arrow brackets"></h1>
+        <div class="header-buttons">
+            <button id="redraw-mode-button"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+            <button id="night-mode-button"><i class="fa-solid fa-moon"></i></button>
+            <button id="save-button"><i class="fa-solid fa-floppy-disk"></i></button>
+            <input type="file" id="json-upload" accept=".json">
+            <button id="load-button"><i class="fa-solid fa-floppy-disk"></i></button>
+        </div>
+    </header>
+    <main>
+        <div id="display-container">
+            <canvas id="displayCanvas" width="400" height="400"></canvas>
+            <h2>Inspector</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Resolution</th> <td id="resolution">400x400</td>
+                    </tr>
+                    <tr>
+                        <th>Redraw Mode</th> <td id="redraw-mode">On Change</td>
+                    </tr>
+                    <tr>
+                        <th>Total Instructions</th> <td id="instructions">30</td>
+                    </tr>
+                    <tr>
+                        <th>Variables</th> <td id="varibles">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="pallet-container">
+            <button id="addStyleBlock">+</button>
+            <button id="addDrawBlock">+</button>
+            <button id="addControlBlock">+</button>
+            <button id="addFunctionBlock">+</button>
+            <button id="addVariableBlock">+</button>
+            <button id="addMathBlock">+</button>
+            <button id="addInputBlock">+</button>
+        </div>
+        <div id="instruction-container">
+            <div class="instruction">
+                
+            </div>
+        </div>
+    </main>
+    </div>
 </body>
 </html>
