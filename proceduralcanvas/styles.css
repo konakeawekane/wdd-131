@@ -3,7 +3,7 @@ body{
 }
 
 #page{
-    max-width: 700px;
+    max-width: 400px;
     justify-self: center;
 }
 
@@ -13,8 +13,8 @@ body{
 
 header{
     display:grid;
-    grid-template-columns: 1fr 100px;
-    align-items: center;
+    grid-template-columns: 1fr 150px;
+    align-items: baseline;
 }
 #logo{
     width: 50px;
@@ -35,6 +35,180 @@ header{
 }
 
 /*
-    Header ---
+    display container ---
 */
 
+#display-container table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#display-container table td, th{
+    border: 1px solid black;
+}
+
+#display-container table th{
+    text-align: justify;
+}
+
+/*
+    pallet container ---
+*/
+
+#pallet-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#pallet-container button{
+    width: 100%;
+    height: 100px;
+    margin: 0px 2px 20px 2px;
+}
+
+#addClearBlock{
+    background-color: red;
+}
+
+#addLineBlock{
+    background-color: rgb(225, 255, 0);
+}
+
+#addTurnBlock{
+    background-color: rgb(208, 0, 255);
+}
+
+#addRepeatBlock{
+    background-color: rgb(0, 38, 255);
+}
+
+#addXBlock{
+    background-color: rgb(0, 255, 242);
+}
+
+#addYBlock{
+    background-color: rgb(0, 255, 55);
+}
+
+#addDirBlock{
+    background-color: rgb(255, 153, 0);
+}
+
+/* 
+    instructions container ---
+*/
+
+#instruction-container{
+    width:100%;
+    margin-bottom: 50px;
+    height:500px;
+    overflow:scroll;
+}
+
+#instruction-container div{
+    padding: 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+#instruction-container div p, input{
+    display: inline;
+    font-size: 1.4em;
+}
+
+#instruction-container div input{
+    width: 60px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.317);
+}
+
+#instruction-container div p, input{
+    display: inline;
+    padding: 5px;
+}
+
+.block-name{
+    border: 2px solid black;
+    padding: 4px;
+}
+
+#instruction-container div .block-attribute{
+    font-size: 1.1em;
+}
+
+.clear-block{
+    background-color: rgb(249, 4, 4);
+}
+
+.move-block{
+    background-color: rgb(225, 255, 0);
+}
+
+.turn-block{
+    background-color: rgb(208, 0, 255);
+}
+
+.repeat-block{
+    background-color: rgb(0, 38, 255);
+}
+
+.x-block{
+    background-color: rgb(0, 255, 242);
+}
+
+.y-block{
+    background-color: rgb(0, 255, 55);
+}
+
+.dir-block{
+    background-color: rgb(255, 153, 0);
+}
+
+.delete-block{
+    background-color: rgb(93, 93, 93);
+}
+
+.delete-btn{
+    border: 2px solid black;
+    padding: 4px;
+}
+
+@media screen and (min-width: 800px){
+    #page{
+        max-width: none;
+        width: 100%;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 100px 1fr 400px;
+    }
+
+    #display-container{
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    #instruction-container{
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    #pallet-container{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    #pallet-container button{
+        width: 100px;
+        height: 100%;
+        margin: 2px 20px 2px 0px;
+    }
+
+    #display-container table{
+        width: 400px;
+    }
+}
