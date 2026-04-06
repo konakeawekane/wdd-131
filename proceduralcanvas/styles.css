@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
     /*"Bungee" */
+:root{
+    --color1:rgb(184, 66, 66);
+    --color2:rgb(156, 168, 63);
+    --color3:rgb(142, 60, 160);
+    --color4:rgb(59, 74, 160);
+    --color5:rgb(21, 124, 119);
+    --color6:rgb(66, 169, 88);
+    --color7:rgb(174, 132, 69);
+}
+
 body{
     margin: 0px;
     font-family: "Tomorrow", Roboto, sans-serif;
@@ -57,9 +67,11 @@ header{
     grid-template-columns: 1fr 180px;
     align-items: baseline;
 }
+
 #logo{
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    vertical-align: bottom;
 }
 .header-buttons{
     justify-self: right;
@@ -127,40 +139,32 @@ header{
     font-size: 2em;
 }
 
-    /* d7263d (red)
-    f46036 (orange)
-    2e294e (dark blue)
-    1b998b (turquios)
-    c5d86d (light green)
-    595959 (mid gray)
-    DCE0D9 (light gray)  */
-
 #addClearBlock{
-    background-color: rgb(122, 18, 18);
+    background-color: var(--color1);
 }
 
 #addLineBlock{
-    background-color: rgb(97, 107, 16);
+    background-color: var(--color2);
 }
 
 #addTurnBlock{
-    background-color: rgb(90, 19, 106);
+    background-color: var(--color3);
 }
 
 #addRepeatBlock{
-    background-color: rgb(19, 31, 101);
+    background-color: var(--color4);
 }
 
 #addXBlock{
-    background-color: #2e294e;
+    background-color: var(--color5);
 }
 
 #addYBlock{
-    background-color: #188a7d;
+    background-color: var(--color6);
 }
 
 #addDirBlock{
-    background-color: rgb(125, 81, 17);
+    background-color: var(--color7);
 }
 
 /* 
@@ -168,7 +172,7 @@ header{
 */
 
 #instruction-container{
-    width:100%;
+    width: 385px;
     margin-bottom: 50px;
     height:500px;
     overflow-y:scroll;
@@ -211,31 +215,31 @@ header{
 }
 
 .clear-block{
-    background-color: rgb(184, 66, 66);
+    background-color: var(--color1);
 }
 
 .move-block{
-    background-color: rgb(156, 168, 63);
+    background-color: var(--color2);
 }
 
 .turn-block{
-    background-color: rgb(142, 60, 160);
+    background-color: var(--color3);
 }
 
 .repeat-block{
-    background-color: rgb(59, 74, 160);
+    background-color: var(--color4);
 }
 
 .x-block{
-    background-color: rgb(21, 124, 119);
+    background-color: var(--color5);
 }
 
 .y-block{
-    background-color: rgb(66, 169, 88);
+    background-color: var(--color6);
 }
 
 .dir-block{
-    background-color: rgb(174, 132, 69);
+    background-color: var(--color7);
 }
 
 .delete-block{
@@ -276,7 +280,8 @@ header{
         grid-row: 1 / 2;
         padding: 5px;
         margin-left: 20px;
-        margin-right: 20px;
+        margin-right: 10px;
+        width:auto;
     }
 
     #pallet-container{
@@ -285,6 +290,7 @@ header{
         flex-direction: column;
         height: 400px;
         padding: 5px;
+        margin-top: 0px;
     }
 
     #pallet-container button{
@@ -294,6 +300,6 @@ header{
     }
 
     #display-container table{
-        width: 400px;
+        width: 380px;
     }
 }

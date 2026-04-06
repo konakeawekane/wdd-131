@@ -243,7 +243,7 @@ function CreateRepeatBlock(){
 function CreateXBlock(){
     instructions.push({
         type: "set x",
-        value: 0
+        value: 200
     })
     RebuildInstructionLayout();
 }
@@ -251,7 +251,7 @@ function CreateXBlock(){
 function CreateYBlock(){
     instructions.push({
         type: "set y",
-        value: 0 
+        value: 200 
     })
     RebuildInstructionLayout();
 }
