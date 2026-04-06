@@ -7,6 +7,7 @@
     <script src="drawer.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="favicon.png">
 </head>
 <body>
     <div id="page">
@@ -17,14 +18,14 @@
             <button id="night-mode-button" aria-label="Night Mode"><i class="fa-solid fa-moon"></i></button>
             <button id="save-button" aria-label="Save Project to Computer"><i class="fa-solid fa-floppy-disk"></i></button>
             <input type="file" id="json-upload" accept=".json">
-            <button id="load-button" aria-label="Load Project from Computer"><i class="fa-solid fa-floppy-disk"></i></button>
+            <button id="load-button" aria-label="Load Project from Computer"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
         </div>
     </header>
     <main>
-        <div id="display-container">
-            <canvas id="displayCanvas" width="400" height="400"></canvas>
+        <div id="display-container" class="pannel">
+            <canvas id="displayCanvas" width="400" height="400" class="pannel"></canvas>
             <h2>Inspector</h2>
-            <table>
+            <table class="pannel">
                 <tbody>
                     <tr>
                         <th>Resolution</th> <td id="resolution">400x400</td>
@@ -39,15 +40,15 @@
             </table>
         </div>
         <div id="pallet-container">
-            <button id="addClearBlock" aria-label="add Clear Block">+</button>
-            <button id="addLineBlock" aria-label="add Line Block">+</button>
-            <button id="addTurnBlock" aria-label="add Turn Block">+</button>
-            <button id="addRepeatBlock" aria-label="add Repeat Block">+</button>
-            <button id="addXBlock" aria-label="add Set x Block">+</button>
-            <button id="addYBlock" aria-label="add Set y Block">+</button>
-            <button id="addDirBlock" aria-label="add Set direction Block">+</button>
+            <button id="addClearBlock" class="button-pannel" aria-label="add Clear Block">+</button>
+            <button id="addLineBlock" class="button-pannel" aria-label="add Line Block">+</button>
+            <button id="addTurnBlock" class="button-pannel" aria-label="add Turn Block">+</button>
+            <button id="addRepeatBlock" class="button-pannel" aria-label="add Repeat Block">+</button>
+            <button id="addXBlock" class="button-pannel" aria-label="add Set x Block">+</button>
+            <button id="addYBlock" class="button-pannel" aria-label="add Set y Block">+</button>
+            <button id="addDirBlock" class="button-pannel" aria-label="add Set direction Block">+</button>
         </div>
-        <div id="instruction-container">
+        <div id="instruction-container" class="pannel">
         </div>
     </main>
     </div>

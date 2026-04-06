@@ -103,6 +103,7 @@ function onLoad(e){  // used modzilla to understand this one
         let uploadedFile = JSON.parse(fileContent);
         if (Array.isArray(uploadedFile)) {
             instructions = uploadedFile;
+            RebuildInstructionLayout();
             console.log("Loaded new project: ");
             console.log(instructions);
         } else {
@@ -166,9 +167,9 @@ function run(inst){
             draw.stroke();
             break;
         case("repeat"):
-            let start = Math.max(instructions.findIndex((item) => item == inst), 0);
+            let start = Math.max(instructions.findIndex((item) => item == inst) - inst.jumpUp, 0);
             for(let n = 0; n < inst.repeat; n++){
-                for(let i = start; i > 0; i++){
+                for(let i = start; i < start + inst.jumpUp; i++){
                     run(instructions[i]);
                     console.log(i);
                 }
@@ -277,7 +278,7 @@ function RebuildInstructionLayout(){
     deleteBtn.textContent = "X";
 
     let deleteBlock = document.createElement("div");
-    deleteBlock.classList = "delete-block";
+    deleteBlock.classList = "delete-block pannel";
     deleteBlock.ariaLabel = "delete block";
 
     deleteBlock.appendChild(deleteBtn);
@@ -294,66 +295,66 @@ function GetInstructionTemplate(inst){
     switch (inst.type){
         case "set dir":
             return `
-            <div class="dir-block" aria-label="Set direction Block">
+            <div class="dir-block pannel" aria-label="Set direction Block">
                 <p class="block-name">Set Direction</p>
                 <p class="block-attribute">Angle:</p>
-                <input class="block-field" type="number" value="${inst.value}" aria-label="direction input">
+                <input class="block-field pannel" type="number" value="${inst.value}" aria-label="direction input">
             </div>
             `;
         case "set x":
             return `
-            <div class="x-block" aria-label="Set x position Block">
+            <div class="x-block pannel" aria-label="Set x position Block">
                 <p class="block-name">Set X</p>
                 <p class="block-attribute">Position:</p>
-                <input class="block-field" type="number" value="${inst.value}" aria-label="x position input">
+                <input class="block-field pannel" type="number" value="${inst.value}" aria-label="x position input">
             </div>
             `;
         case "set y":
             return `
-            <div class="y-block" aria-label="Set y position Block">
+            <div class="y-block pannel" aria-label="Set y position Block">
                 <p class="block-name">Set Y</p>
                 <p class="block-attribute">Position:</p>
-                <input class="block-field" type="number" value="${inst.value}" aria-label="y position input">
+                <input class="block-field pannel" type="number" value="${inst.value}" aria-label="y position input">
             </div>
             `;
         case "repeat":
             return `
-            <div class="repeat-block" aria-label="Repeat Block">
+            <div class="repeat-block pannel" aria-label="Repeat Block">
                 <p class="block-name">Repeat</p>
                 <p class="block-attribute">Starting:</p>
-                <input class="block-field" type="number" value="${inst.jumpUp}" aria-label="Blocks above to start from">
+                <input class="block-field pannel" type="number" value="${inst.jumpUp}" aria-label="Blocks above to start from">
                 <p class="block-attribute">Repetitions:</p>
-                <input class="block-field" type="number" value="${inst.repeat}" aria-label="Repetitions">
+                <input class="block-field pannel" type="number" value="${inst.repeat}" aria-label="Repetitions">
             </div>
             `;
         case "turn":
             return `
-            <div class="turn-block" aria-label="Turn Block">
+            <div class="turn-block pannel" aria-label="Turn Block">
                 <p class="block-name">Turn</p>
                 <p class="block-attribute">Angle:</p>
-                <input class="block-field" type="number" value="${inst.value}" aria-label="Angle">
+                <input class="block-field pannel" type="number" value="${inst.value}" aria-label="Angle">
             </div>
             `;
         case "move":
             return `
-            <div class="move-block" aria-label="Move forward Block">
+            <div class="move-block pannel" aria-label="Move forward Block">
                 <p class="block-name">Move</p>
                 <p class="block-attribute">Distance:</p>
-                <input class="block-field" type="number" value="${inst.value}" aria-label="Distance">
+                <input class="block-field pannel" type="number" value="${inst.value}" aria-label="Distance">
                 <p class="block-attribute">Color:</p>
-                <input class="block-field" type="number" value="${inst.r}" aria-label="Line Color Red Value">
-                <input class="block-field" type="number" value="${inst.g}" aria-label="Line Color Green Value">
-                <input class="block-field" type="number" value="${inst.b}" aria-label="Line Color Blue Value">
+                <input class="block-field pannel" type="number" value="${inst.r}" aria-label="Line Color Red Value">
+                <input class="block-field pannel" type="number" value="${inst.g}" aria-label="Line Color Green Value">
+                <input class="block-field pannel" type="number" value="${inst.b}" aria-label="Line Color Blue Value">
             </div>
             `;
         case "clear":
             return `
-            <div class="clear-block" aria-label="Clear Block">
+            <div class="clear-block pannel" aria-label="Clear Block">
                 <p class="block-name" >Clear:</p>
                 <p class="block-attribute" aria-label="Color Attribute">Color</p>
-                <input class="block-field" type="number" value="${inst.r}" aria-label="Clear Color Red value">
-                <input class="block-field" type="number" value="${inst.g}" aria-label="Clear Color Green value">
-                <input class="block-field" type="number" value="${inst.b}" aria-label="Clear Color Blue value">
+                <input class="block-field pannel" type="number" value="${inst.r}" aria-label="Clear Color Red value">
+                <input class="block-field pannel" type="number" value="${inst.g}" aria-label="Clear Color Green value">
+                <input class="block-field pannel" type="number" value="${inst.b}" aria-label="Clear Color Blue value">
             </div>
             `;
         default:

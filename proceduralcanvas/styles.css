@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+    /*"Bungee" */
 body{
     margin: 0px;
+    font-family: "Tomorrow", Roboto, sans-serif;
+    background-color: #a2a2a2;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+input,button{
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+button:hover{
+    translate: 2px 2px;
+    box-shadow: 0px 0px 0px black;
 }
 
 #page{
@@ -8,12 +24,37 @@ body{
 }
 
 /*
+    Commons ---
+*/
+
+.pannel{
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px black;
+}
+
+.button-pannel{
+    border: 2px solid black;
+    box-shadow: 2px 2px 0px black;
+    animation: translation 0.2;
+}
+
+.button_pannel:hover{
+    box-shadow: 0px 0px 0px black;
+    translate: 1px 1px;
+}
+
+.button-pannel:focus{
+    box-shadow: 0px 0px 0px black;
+    translate: 1px 1px;
+}
+
+/*
     Header ---
 */
 
 header{
     display:grid;
-    grid-template-columns: 1fr 150px;
+    grid-template-columns: 1fr 180px;
     align-items: baseline;
 }
 #logo{
@@ -26,10 +67,17 @@ header{
 .header-buttons button{
     border: none;
     background: none;
-    font-size: 20px;
+    font-size: 2em;
     margin: 0px;
     padding: 0px;
+    transition: transform 0.5s
 }
+
+.header-buttons button:hover{
+    color: rgb(255, 240, 72);
+    text-shadow: 0px 0px 0px black;
+}
+
 #json-upload{
     display: none;
 }
@@ -38,14 +86,23 @@ header{
     display container ---
 */
 
+#display-container{
+    padding: 5px;
+}
+
+#displayCanvas{
+    width: 380px;
+}
+
 #display-container table{
     width: 100%;
     border: 1px solid black;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 #display-container table td, th{
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 #display-container table th{
@@ -60,40 +117,50 @@ header{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+    margin-top: 20px;
 }
 
 #pallet-container button{
     width: 100%;
-    height: 100px;
+    height: 80px;
     margin: 0px 2px 20px 2px;
+    font-size: 2em;
 }
 
+    /* d7263d (red)
+    f46036 (orange)
+    2e294e (dark blue)
+    1b998b (turquios)
+    c5d86d (light green)
+    595959 (mid gray)
+    DCE0D9 (light gray)  */
+
 #addClearBlock{
-    background-color: red;
+    background-color: rgb(122, 18, 18);
 }
 
 #addLineBlock{
-    background-color: rgb(225, 255, 0);
+    background-color: rgb(97, 107, 16);
 }
 
 #addTurnBlock{
-    background-color: rgb(208, 0, 255);
+    background-color: rgb(90, 19, 106);
 }
 
 #addRepeatBlock{
-    background-color: rgb(0, 38, 255);
+    background-color: rgb(19, 31, 101);
 }
 
 #addXBlock{
-    background-color: rgb(0, 255, 242);
+    background-color: #2e294e;
 }
 
 #addYBlock{
-    background-color: rgb(0, 255, 55);
+    background-color: #188a7d;
 }
 
 #addDirBlock{
-    background-color: rgb(255, 153, 0);
+    background-color: rgb(125, 81, 17);
 }
 
 /* 
@@ -104,7 +171,12 @@ header{
     width:100%;
     margin-bottom: 50px;
     height:500px;
-    overflow:scroll;
+    overflow-y:scroll;
+    padding: 5px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 #instruction-container div{
@@ -130,6 +202,7 @@ header{
 
 .block-name{
     border: 2px solid black;
+    box-shadow: 2px 2px 0px black;
     padding: 4px;
 }
 
@@ -138,31 +211,31 @@ header{
 }
 
 .clear-block{
-    background-color: rgb(249, 4, 4);
+    background-color: rgb(184, 66, 66);
 }
 
 .move-block{
-    background-color: rgb(225, 255, 0);
+    background-color: rgb(156, 168, 63);
 }
 
 .turn-block{
-    background-color: rgb(208, 0, 255);
+    background-color: rgb(142, 60, 160);
 }
 
 .repeat-block{
-    background-color: rgb(0, 38, 255);
+    background-color: rgb(59, 74, 160);
 }
 
 .x-block{
-    background-color: rgb(0, 255, 242);
+    background-color: rgb(21, 124, 119);
 }
 
 .y-block{
-    background-color: rgb(0, 255, 55);
+    background-color: rgb(66, 169, 88);
 }
 
 .dir-block{
-    background-color: rgb(255, 153, 0);
+    background-color: rgb(174, 132, 69);
 }
 
 .delete-block{
@@ -170,8 +243,11 @@ header{
 }
 
 .delete-btn{
+    background-color: rgb(65, 65, 65);
     border: 2px solid black;
     padding: 4px;
+    width: 100%;
+    height: 3em;
 }
 
 @media screen and (min-width: 800px){
@@ -180,9 +256,14 @@ header{
         width: 100%;
     }
 
+    .title{
+        margin-left: 10px;
+    }
+
     main{
         display: grid;
-        grid-template-columns: 100px 1fr 400px;
+        grid-template-columns: 85px 1fr 400px;
+        justify-items: stretch;
     }
 
     #display-container{
@@ -193,6 +274,9 @@ header{
     #instruction-container{
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        padding: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     #pallet-container{
@@ -200,10 +284,11 @@ header{
         grid-row: 1 / 2;
         flex-direction: column;
         height: 400px;
+        padding: 5px;
     }
 
     #pallet-container button{
-        width: 100px;
+        width: 80px;
         height: 100%;
         margin: 2px 20px 2px 0px;
     }
